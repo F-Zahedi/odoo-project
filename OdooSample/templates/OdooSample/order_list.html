@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block content %}
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <div
+          class="card-title d-md-flex align-items-start justify-content-between"
+        >
+          <h6 class="card-title">لیست سفارشات</h6>
+          <div class="reportrange btn btn-outline-light btn-sm mt-3 mt-md-0">
+            <i class="ti-calendar mr-2"></i>
+            <span class="text"></span>
+            <i class="ti-angle-down ml-2"></i>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="table-responsive">
+              <table class="table table-striped mb-0">
+                <thead>
+                  <tr>
+                    <th class="text-center">شناسه مشتری</th>
+                    <th class="text-center">شناسه کارمند</th>
+                    <th class="text-center">شناسه ارسال</th>
+
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for order in object_list %}
+                  <tr>
+                    <td class="text-center">{{order.CustomerId}}</td>
+                    <td class="text-success text-center">
+                      {{order.EmployeeId}}
+                    </td>
+                    <td class="text-success text-center">
+                      {{order.DeliveryTypeId}}
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="row mt-3">
+          <div class="col-md-3">
+            <div class="card mb-0">
+              <div class="card-body p-3">
+                <div class="d-flex align-items-center"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

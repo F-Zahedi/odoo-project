@@ -1,0 +1,8 @@
+
+{% block content %}
+        <form class="pt-3" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">ویرایش</button>
+        </form>
+{% endblock %}
